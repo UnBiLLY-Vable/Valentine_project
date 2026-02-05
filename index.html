@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Valentine Invite 💘</title>
+  <style>
+  body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    margin-top: 100px;
+    background-color: #ffe6eb;
+  }
+
+  h1 {
+    font-size: 2.5rem;
+  }
+
+  #buttons {
+    display: flex;
+    justify-content: center;
+    gap: 40px; /* space between buttons */
+    margin-top: 40px;
+  }
+
+  button {
+    font-size: 1.2rem;
+    padding: 10px 25px;
+    cursor: pointer;
+    border-radius: 10px;
+    border: none;
+  }
+
+  #yes {
+    background-color: #ff4d6d;
+    color: white;
+  }
+
+  #no {
+    background-color: #ccc;
+  }
+   .photo {
+    width: 160px;
+    height: auto;
+    border-radius: 12px;   /* soft corners */
+    margin-bottom: 20px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+  }
+  
+
+</style>
+
+</head>
+<body>
+<img src="her.jpeg" alt="Her photo" class="photo">
+
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+  <h1>PHOEBE JANE P. PIAMONTE </h1>
+  <h3>Will you be my Valentine? 💖</h3>
+
+
+ <div id="buttons">
+  <button id="yes" onclick="yesClicked()">Yes 💕</button>
+  <button id="no">No 🙃</button>
+</div>
+
+
+  <script>
+  const noBtn = document.getElementById("no");
+
+  noBtn.addEventListener("mouseover", () => {
+    noBtn.style.position = "absolute";
+
+    const x = Math.random() * (window.innerWidth - noBtn.offsetWidth);
+    const y = Math.random() * (window.innerHeight - noBtn.offsetHeight);
+
+    noBtn.style.left = `${x}px`;
+    noBtn.style.top = `${y}px`;
+  });
+
+  function yesClicked() {
+    window.location.href = "yes.html";
+  }
+</script>
+
+
+</body>
+</html>
