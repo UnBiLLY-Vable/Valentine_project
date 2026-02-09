@@ -2,91 +2,95 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Valentine Invite 💘</title>
-  <style>
+  <title>For You 💌</title>
+<style>
   body {
-    font-family: Arial, sans-serif;
+    background: linear-gradient(180deg, #fff1f4, #ffe6ec);
+    font-family: "Georgia", serif;
     text-align: center;
-    margin-top: 100px;
-    background-color: #ffe6eb;
+    padding: 40px;
   }
 
-  h1 {
-    font-size: 2.5rem;
+  .box {
+    max-width: 500px;
+    margin: auto;
+    background: #fffafc;
+    padding: 35px 30px;
+    border-radius: 18px;
+    box-shadow:
+      0 12px 30px rgba(0,0,0,0.12),
+      inset 0 0 0 1px rgba(255,77,109,0.15);
+    position: relative;
   }
 
-  #buttons {
-    display: flex;
-    justify-content: center;
-    gap: 40px; /* space between buttons */
-    margin-top: 40px;
+  /* subtle corner hearts */
+  .box::before,
+  .box::after {
+    content: "❤";
+    position: absolute;
+    font-size: 14px;
+    color: #ff8fa3;
+    opacity: 0.5;
+  }
+
+  .box::before {
+    top: 12px;
+    left: 14px;
+  }
+
+  .box::after {
+    bottom: 12px;
+    right: 14px;
+  }
+
+  p {
+    font-size: 1.15rem;
+    line-height: 1.7;
+    color: #444;
   }
 
   button {
-    font-size: 1.2rem;
-    padding: 10px 25px;
-    cursor: pointer;
-    border-radius: 10px;
+    margin-top: 30px;
+    padding: 10px 34px;
+    font-size: 1.05rem;
     border: none;
-  }
-
-  #yes {
-    background-color: #ff4d6d;
+    border-radius: 25px;
+    background: linear-gradient(135deg, #ff6b88, #ff4d6d);
     color: white;
+    cursor: pointer;
+    box-shadow: 0 6px 14px rgba(255,77,109,0.35);
   }
 
-  #no {
-    background-color: #ccc;
+  button:hover {
+    transform: translateY(-1px);
   }
-   .photo {
-    width: 160px;
-    height: auto;
-    border-radius: 12px;   /* soft corners */
-    margin-bottom: 20px;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
-  }
-  
-
 </style>
 
 </head>
 <body>
-<img src="her.jpeg" alt="Her photo" class="photo">
 
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-  <h1>PHOEBE JANE P. PIAMONTE </h1>
-  <h3>Will you be my Valentine? 💖</h3>
+  <div class="box">
+    <p>
+      Hi Phoebe ☺️<br><br>
+      I just wanted to say that getting to know you has been
+      one of my favorite things lately.
+      <br><br>
+      The laughs, the conversations, the quiet moments —
+      they all mean more to me than you probably realize.
+      <br><br>
+      I have something I want to ask you…
+    </p>
 
+    <button onclick="goNext()">Next 💕</button>
+   
 
- <div id="buttons">
-  <button id="yes" onclick="yesClicked()">Yes 💕</button>
-  <button id="no">No 🙃</button>
-</div>
-
+  </div>
 
   <script>
-  const noBtn = document.getElementById("no");
-
-  noBtn.addEventListener("mouseover", () => {
-    noBtn.style.position = "absolute";
-
-    const x = Math.random() * (window.innerWidth - noBtn.offsetWidth);
-    const y = Math.random() * (window.innerHeight - noBtn.offsetHeight);
-
-    noBtn.style.left = `${x}px`;
-    noBtn.style.top = `${y}px`;
-  });
-
-  function yesClicked() {
-    window.location.href = "yes.html";
-  }
-</script>
-
+    function goNext() {
+      window.location.href = "intro.html";
+    }
+  </script>
 
 </body>
 </html>
