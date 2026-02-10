@@ -2,93 +2,125 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>For You 💌</title>
-<style>
-  body {
-    background: linear-gradient(180deg, #fff1f4, #ffe6ec);
-    font-family: "Georgia", serif;
-    text-align: center;
-    padding: 40px;
-  }
+  <title>Happy Valentine's Day 💖</title>
+  <style>
+    body {
+      margin: 0;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: #fde2e4;
+      font-family: 'Segoe UI', sans-serif;
+    }
 
-  .box {
-    max-width: 500px;
-    margin: auto;
-    background: #fffafc;
-    padding: 35px 30px;
-    border-radius: 18px;
-    box-shadow:
-      0 12px 30px rgba(0,0,0,0.12),
-      inset 0 0 0 1px rgba(255,77,109,0.15);
-    position: relative;
-  }
+    .container {
+      position: relative;
+      cursor: pointer;
+    }
 
-  /* subtle corner hearts */
-  .box::before,
-  .box::after {
-    content: "❤";
-    position: absolute;
-    font-size: 14px;
-    color: #ff8fa3;
-    opacity: 0.5;
-  }
+    .envelope {
+      position: relative;
+      width: 300px;
+      height: 200px;
+      background: #f08080;
+      border-radius: 5px;
+      overflow: hidden;
+    }
 
-  .box::before {
-    top: 12px;
-    left: 14px;
-  }
+    /* Envelope flap */
+    .flap {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 0;
+      height: 0;
+      border-left: 150px solid transparent;
+      border-right: 150px solid transparent;
+      border-top: 100px solid #e66767;
+      transform-origin: top;
+      transition: transform 0.6s ease;
+      z-index: 3;
+    }
 
-  .box::after {
-    bottom: 12px;
-    right: 14px;
-  }
+    /* Envelope body */
+    .front {
+      position: absolute;
+      bottom: 0;
+      width: 100%;
+      height: 100%;
+      background: #f08080;
+      z-index: 2;
+    }
 
-  p {
-    font-size: 1.15rem;
-    line-height: 1.7;
-    color: #444;
-  }
+    /* Letter */
+    .letter {
+      position: absolute;
+      bottom: 10px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 260px;
+      height: 160px;
+      background: #fff;
+      border-radius: 4px;
+      padding: 15px;
+      box-sizing: border-box;
+      text-align: center;
+      transition: transform 0.6s ease;
+      z-index: 1;
+    }
 
-  button {
-    margin-top: 30px;
-    padding: 10px 34px;
-    font-size: 1.05rem;
-    border: none;
-    border-radius: 25px;
-    background: linear-gradient(135deg, #ff6b88, #ff4d6d);
-    color: white;
-    cursor: pointer;
-    box-shadow: 0 6px 14px rgba(255,77,109,0.35);
-  }
+    .letter h2 {
+      margin: 10px 0 5px;
+      color: #e63946;
+    }
 
-  button:hover {
-    transform: translateY(-1px);
-  }
-</style>
+    .letter p {
+      font-size: 14px;
+      color: #555;
+    }
 
+    /* Open animation */
+    .container.open .flap {
+      transform: rotateX(180deg);
+    }
+
+    .container.open .letter {
+      transform: translate(-50%, -120px);
+    }
+
+    .hint {
+      margin-top: 20px;
+      text-align: center;
+      font-size: 14px;
+      color: #444;
+    }
+  </style>
 </head>
 <body>
 
-  <div class="box">
-    <p>
-      Hi Phoebe ☺️<br><br>
-      I just wanted to say that getting to know you has been
-      one of my favorite things lately.
-      <br><br>
-      The laughs, the conversations, the quiet moments —
-      they all mean more to me than you probably realize.
-      <br><br>
-      I have something I want to ask you…
-    </p>
+  <div>
+    <div class="container" onclick="toggleEnvelope()">
+      <div class="envelope">
+        <div class="flap"></div>
+        <div class="letter">
+          <h2>Happy Valentine’s 💕</h2>
+          <p>
+            Just wanted to say<br>
+            you make my days warmer<br>
+            and my smiles brighter 💖
+          </p>
+        </div>
+        <div class="front"></div>
+      </div>
+    </div>
 
-    <button onclick="goNext()">Next 💕</button>
-   
-
+    <div class="hint">Click the envelope 💌</div>
   </div>
 
   <script>
-    function goNext() {
-      window.location.href = "pages/intro.html";
+    function toggleEnvelope() {
+      document.querySelector('.container').classList.toggle('open');
     }
   </script>
 
